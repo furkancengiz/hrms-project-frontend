@@ -12,15 +12,19 @@ export default function EmployerList() {
 
         employerService.getEmployers().then((result)=>setEmployers(result.data.data))
 
-    })
+    },[])
 
     return (
         <div>
             <Header as="h2">
-                <Icon name="list alternate outline"/>
+                <Icon name="building outline"color="green"/>
                 <Header.Content>Şirket listesi</Header.Content>
             </Header>
+
+
             {colors.map((color) => (
+
+                
                 <Table color={color} key={color}>
                     <Table.Header>
                         <Table.Row >
@@ -45,11 +49,12 @@ export default function EmployerList() {
                         }
 
 
+
                     </Table.Body>
 
                     <Table.Footer>
                         <Table.Row>
-                            <Table.HeaderCell colSpan='3'>
+                            <Table.HeaderCell colSpan='5'>
                                 <Menu floated='right' pagination>
                                     <Menu.Item as='a' icon>
                                         <Icon name='chevron left' />

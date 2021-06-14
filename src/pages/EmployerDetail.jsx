@@ -1,15 +1,12 @@
 import React from 'react'
 
-
-export default function Job() {
+export default function EmployerDetail() {
     return (
-
-        
         <div>
+
             
+            İşveren detayları
 
         </div>
     )
 }
-
-

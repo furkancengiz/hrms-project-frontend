@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import { Icon,Header, Label, Menu, Table } from 'semantic-ui-react'
 import JobPositionService from '../services/jobPositionService'
 
 
@@ -18,6 +18,10 @@ export default function JobpositionList() {
 
     return (
         <div>
+             <Header as="h2">
+                <Icon color="green" name="sistrix"/>
+                <Header.Content>İş İlanları</Header.Content>
+            </Header>
             {colors.map((color) => (
                 <Table color={color} key={color}>
                     <Table.Header>
@@ -49,10 +53,13 @@ export default function JobpositionList() {
 
                     <Table.Footer>
                         <Table.Row>
-                            <Table.HeaderCell colSpan='3'>
+                            <Table.HeaderCell colSpan='5'>
                                 <Menu floated='right' pagination>
                                     <Menu.Item as='a' icon>
+
+                                        
                                         <Icon name='chevron left' />
+
                                     </Menu.Item>
                                     <Menu.Item as='a'>1</Menu.Item>
                                     <Menu.Item as='a'>2</Menu.Item>
@@ -69,4 +76,5 @@ export default function JobpositionList() {
             ))}
         </div>
     )
+    
 }

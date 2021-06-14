@@ -1,47 +1,42 @@
-import React, { useState ,useEffect} from 'react'
+import React, { useEffect,useState } from 'react'
+import CandidateAcademyService from '../services/candidateAcademyService'
 import { Icon, Label, Menu, Table } from 'semantic-ui-react'
-import CandidateService from '../../services/candidateService'
-
 const colors = [
     'green',
 ]
-export default function CandidateList() {
 
-    const [candidates, setCandidates] = useState([])
 
+export default function CandidateAcademyList() {
+
+    const [candidateAcademyies, setcandidateAcademyies] = useState([]) 
 useEffect(()=>{
-    
-    let candidateService= new CandidateService()
-    candidateService.getCandidates().then(result => setCandidates(result.data.data),[])
-  
-})
-
+    let candidateAcademyService = new CandidateAcademyService()
+    candidateAcademyService.getCandidateAcademyies().then(result=> setcandidateAcademyies(result.data.data))},[])
 
     return (
         <div>
-
-            {colors.map((color) => (
+             {colors.map((color) => (
                 <Table color={color} key={color}>
                     <Table.Header>
-
-                        
                         <Table.Row >
                             <Table.HeaderCell>İsim</Table.HeaderCell>
                             <Table.HeaderCell>Soyisim</Table.HeaderCell>
                             <Table.HeaderCell>Email</Table.HeaderCell>
 
+                            
 
                         </Table.Row>
                     </Table.Header>
 
                     <Table.Body>
                         {
-                            candidates.map(candidate => (
-                                <Table.Row key={candidate.id}>
+                            candidateAcademyies.map(candidateAcademy => (
+                                <Table.Row key={candidateAcademy.id}>
 
-                                    <Table.Cell>{candidate.firstName}</Table.Cell>
-                                    <Table.Cell>{candidate.lastName}</Table.Cell>
-                                    <Table.Cell>{candidate.email}</Table.Cell>
+                                    <Table.Cell>{candidateAcademy.departmentName}</Table.Cell>
+                                    <Table.Cell>{candidateAcademy.schoolName}</Table.Cell>
+                                    <Table.Cell>{candidateAcademy.startedYear}</Table.Cell>
+                                    <Table.Cell>{candidateAcademy.finishedYear}</Table.Cell>
                                 </Table.Row>
                             ))
                         }
@@ -67,9 +62,7 @@ useEffect(()=>{
                         </Table.Row>
                     </Table.Footer>
                 </Table>
-            ))}
-
-
+            ))} 
         </div>
     )
 }
