@@ -1,19 +1,3 @@
-# hrms-project-frontend
-human resource management system frontend
-UML DIAGRAM
-![Screenshot_76](https://user-images.githubusercontent.com/76488131/121229871-303f3e00-c897-11eb-8bf2-a5cec72ccd3a.png)
-
-
-
-
-
-
-
-
-
-
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

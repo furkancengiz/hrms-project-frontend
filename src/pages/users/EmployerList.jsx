@@ -16,11 +16,7 @@ export default function EmployerList() {
 
     return (
         <div>
-            <Header as="h2">
-                <Icon name="building outline"color="green"/>
-                <Header.Content>Şirket listesi</Header.Content>
-            </Header>
-
+            
 
             {colors.map((color) => (
 

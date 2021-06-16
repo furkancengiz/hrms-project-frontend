@@ -8,6 +8,7 @@ import EmployerList from '../pages/users/EmployerList';
 import JobPositionDetail from '../pages/JobPositionDetail';
 import EmployerDetail from '../pages/EmployerDetail';
 import CandidateList from '../pages/users/CandidateList';
+import JobPositionCreate from '../pages/JobPositionCreate';
 
 export default function MainDashboard() {
     return (
@@ -19,6 +20,8 @@ export default function MainDashboard() {
                     </Grid.Column>
                     <Grid.Column width={14}>
                     <Route exact path="/" component={JobpositionList}/>
+                    <Route exact path="/jobPositions" component={JobpositionList}/>
+                    <Route exact path="/jobPositionsCreate" component={JobPositionCreate}/>
                     <Route exact path="/employer" component={EmployerList}/>
                     <Route exact path="/jobposition/:id" component={JobPositionDetail}/>
                     <Route exact path="/employer/:id" component={EmployerDetail}/>
